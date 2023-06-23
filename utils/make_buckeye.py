@@ -18,8 +18,11 @@ parser.add_argument('--max_phonemes', type=int, required=True)
 args = parser.parse_args()
 
 
-DELIMITER = ['VOCNOISE', 'NOISE', 'SIL']
-FORBIDDEN = ['{B_TRANS}', '{E_TRANS}', '<EXCLUDE-name>', 'LAUGH', 'UNKNOWN', 'IVER-LAUGH', '<exclude-Name>', 'IVER', None]
+# DELIMITER = ['VOCNOISE', 'NOISE', 'SIL']
+# FORBIDDEN = ['{B_TRANS}', '{E_TRANS}', '<EXCLUDE-name>', 'LAUGH', 'UNKNOWN', 'IVER-LAUGH', '<exclude-Name>', 'IVER', None]
+
+DELIMITER = ['SIL']
+FORBIDDEN = ['{B_TRANS}', '{E_TRANS}', '<EXCLUDE-name>', 'LAUGH', 'UNKNOWN', 'IVER-LAUGH', '<exclude-Name>', 'VOCNOISE', 'NOISE', 'IVER', None]
 MIN_PHONEMES = args.min_phonemes
 MAX_PHONEMES = args.max_phonemes
 NOISE_EDGES = 0.2
